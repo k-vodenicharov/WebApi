@@ -13,5 +13,7 @@ namespace WebApi.Models
         {
 
         }
+
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
     }
 }
