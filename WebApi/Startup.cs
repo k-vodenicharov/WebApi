@@ -45,6 +45,9 @@ namespace WebApi
                 options.Password.RequiredLength = 4;
             }
             );
+
+            services.AddCors();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,9 +63,15 @@ namespace WebApi
                 app.UseHsts();
             }
 
+            app.UseCors(builder => builder.WithOrigins("http://localhost:4200")
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            );
+
             app.UseAuthentication();
 
             app.UseHttpsRedirection();
+
             app.UseMvc();
         }
     }
