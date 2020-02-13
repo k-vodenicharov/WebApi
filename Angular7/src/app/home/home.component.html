@@ -1,0 +1,23 @@
+<div class="pos-f-t">
+    <div class="collapse" id="navbarToggleExternalContent">
+      <div class="bg-dark p-4">
+          
+      </div>
+    </div>
+    <nav class="navbar navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand text-white">
+    </a>
+    <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Logout</button>
+    </nav>
+
+    <div class="card m-5" style="width: 18rem" *ngIf="userDetails">
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Username : </strong>{{userDetails.userName}}</li>
+            <li class="list-group-item"><strong>Fullname : </strong>{{userDetails.fullName}}</li>
+            <li class="list-group-item"><strong>Email : </strong>{{userDetails.email}}</li>
+        </ul>
+    </div>
+  </div>
