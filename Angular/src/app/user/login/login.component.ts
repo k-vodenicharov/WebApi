@@ -7,7 +7,7 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styles: []
+  // styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
   formModel = {
@@ -19,14 +19,14 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     if(localStorage.getItem('token') != null)
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('/home-nav');
   }
 
   onSubmit(form: NgForm) {
     this.service.login(form.value).subscribe(
       (res: any) => {
         localStorage.setItem('token', res.token);
-        this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('/home-nav');
       },
       err => {
         if (err.status == 400)

@@ -1,5 +1,5 @@
 body{
-    background-color: #04c582;;
+    background-image: url('assets/img/purple-background.png');
 }
 
 input.form-control,input.form-control:focus{
@@ -91,4 +91,8 @@ div.form-group.required>label:first-child:after{
  div.form-group label:first-child{
     text-transform: uppercase;
     font-size: 0.9rem;
+ }
+
+ html, body {
+     height: 100%;
  }
